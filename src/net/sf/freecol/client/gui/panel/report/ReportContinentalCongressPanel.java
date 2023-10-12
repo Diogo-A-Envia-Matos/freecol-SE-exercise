@@ -42,7 +42,6 @@ import net.sf.freecol.common.model.GoodsType;
 import net.sf.freecol.common.model.Player;
 import net.sf.freecol.common.model.StringTemplate;
 import net.sf.freecol.common.model.Turn;
-import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
 /**

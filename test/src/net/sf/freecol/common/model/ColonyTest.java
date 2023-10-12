@@ -20,7 +20,6 @@
 package net.sf.freecol.common.model;
 
 import net.sf.freecol.common.model.Player.NoClaimReason;
-import static net.sf.freecol.common.util.CollectionUtils.*;
 import net.sf.freecol.server.model.ServerUnit;
 import net.sf.freecol.server.model.ServerPlayer;
 import net.sf.freecol.util.test.FreeColTestCase;

@@ -31,8 +31,6 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.model.Player.NoClaimReason;
 import net.sf.freecol.common.model.production.TileProductionCalculator;
 import net.sf.freecol.common.model.production.WorkerAssignment;
-import net.sf.freecol.common.option.GameOptions;
-import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
 /**

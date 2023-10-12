@@ -29,7 +29,6 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.model.UnitType;
-import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
 /**

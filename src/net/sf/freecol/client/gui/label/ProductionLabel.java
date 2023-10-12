@@ -33,7 +33,6 @@ import javax.swing.plaf.DimensionUIResource;
 import net.sf.freecol.FreeCol;
 import net.sf.freecol.client.ClientOptions;
 import net.sf.freecol.client.FreeColClient;
-import net.sf.freecol.client.gui.FontLibrary;
 import net.sf.freecol.client.gui.ImageLibrary;
 import net.sf.freecol.common.i18n.Messages;
 import net.sf.freecol.common.model.AbstractGoods;

@@ -52,7 +52,6 @@ import net.sf.freecol.common.model.LandMap;
 import net.sf.freecol.common.model.LostCityRumour;
 import net.sf.freecol.common.model.Map;
 import net.sf.freecol.common.model.Direction;
-import net.sf.freecol.common.model.Map.Position;
 import net.sf.freecol.common.model.Nation;
 import net.sf.freecol.common.model.NationType;
 import net.sf.freecol.common.model.Player;

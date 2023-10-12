@@ -23,7 +23,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static net.sf.freecol.common.util.CollectionUtils.*;
 import net.sf.freecol.util.test.FreeColTestCase;
 
 

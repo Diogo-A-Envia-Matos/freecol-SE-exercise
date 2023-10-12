@@ -41,7 +41,7 @@ import net.sf.freecol.common.option.GameOptions;
 import net.sf.freecol.common.option.IntegerOption;
 import net.sf.freecol.common.util.LogBuilder;
 import net.sf.freecol.common.util.RandomChoice;
-import static net.sf.freecol.common.util.CollectionUtils.*;
+
 import static net.sf.freecol.common.util.RandomUtils.*;
 
 

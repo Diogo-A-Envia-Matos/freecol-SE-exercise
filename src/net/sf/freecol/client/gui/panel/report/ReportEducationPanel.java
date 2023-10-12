@@ -34,7 +34,6 @@ import net.sf.freecol.common.model.Colony;
 import net.sf.freecol.common.model.Player;
 import net.sf.freecol.common.model.StringTemplate;
 import net.sf.freecol.common.model.Unit;
-import static net.sf.freecol.common.util.CollectionUtils.*;
 
 import net.miginfocom.swing.MigLayout;
 

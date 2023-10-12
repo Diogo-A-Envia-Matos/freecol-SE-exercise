@@ -29,8 +29,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import net.sf.freecol.common.model.production.TileProductionCalculator;
-import net.sf.freecol.common.model.production.WorkerAssignment;
 import net.sf.freecol.util.test.FreeColTestCase;
 import net.sf.freecol.util.test.FreeColTestUtils;
 

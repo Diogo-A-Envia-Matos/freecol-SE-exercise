@@ -27,8 +27,6 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.model.Game;
 
-import static net.sf.freecol.common.util.CollectionUtils.*;
-
 
 /**
  * The CompoundMission provides a wrapper for several more basic

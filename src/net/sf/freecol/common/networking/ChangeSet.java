@@ -19,7 +19,6 @@
 
 package net.sf.freecol.common.networking;
 
-import static net.sf.freecol.common.util.CollectionUtils.asMap;
 import static net.sf.freecol.common.util.CollectionUtils.removeInPlace;
 import static net.sf.freecol.common.util.CollectionUtils.toList;
 import static net.sf.freecol.common.util.StringUtils.lastPart;

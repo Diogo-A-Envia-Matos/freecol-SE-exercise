@@ -24,7 +24,6 @@ import java.util.Random;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
 
-import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.RandomUtils.*;
 
 

@@ -29,8 +29,6 @@ import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.model.TileImprovement;
 import net.sf.freecol.common.model.Unit;
 
-import static net.sf.freecol.common.util.CollectionUtils.*;
-
 
 /**
  * The ImprovementMission causes a Unit to add a TileImprovement to a

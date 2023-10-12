@@ -32,7 +32,7 @@ import net.sf.freecol.common.model.TileImprovementType;
 import net.sf.freecol.common.model.TileType;
 import net.sf.freecol.common.option.MapGeneratorOptions;
 import net.sf.freecol.server.model.ServerRegion;
-import static net.sf.freecol.common.util.CollectionUtils.*;
+
 import static net.sf.freecol.common.util.RandomUtils.*;
 
 

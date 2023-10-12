@@ -71,7 +71,6 @@ import net.sf.freecol.common.option.GameOptions;
 import net.sf.freecol.common.util.LogBuilder;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 import net.sf.freecol.common.util.RandomChoice;
-import static net.sf.freecol.common.util.StringUtils.*;
 
 import net.sf.freecol.server.FreeColServer;
 import net.sf.freecol.server.ai.AIColony;

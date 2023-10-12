@@ -19,7 +19,6 @@
 
 package net.sf.freecol.common.model;
 
-import static net.sf.freecol.common.util.CollectionUtils.*;
 import net.sf.freecol.server.model.ServerColony;
 import net.sf.freecol.server.model.ServerUnit;
 import net.sf.freecol.util.test.FreeColTestCase;

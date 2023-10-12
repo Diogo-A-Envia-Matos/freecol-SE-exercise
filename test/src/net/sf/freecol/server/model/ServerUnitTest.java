@@ -41,7 +41,6 @@ import net.sf.freecol.common.model.UnitChangeType;
 import net.sf.freecol.common.model.UnitType;
 import net.sf.freecol.common.model.WorkLocation;
 import net.sf.freecol.common.option.GameOptions;
-import static net.sf.freecol.common.util.CollectionUtils.*;
 import net.sf.freecol.server.ServerTestHelper;
 import net.sf.freecol.server.control.InGameController;
 import net.sf.freecol.util.test.FreeColTestCase;

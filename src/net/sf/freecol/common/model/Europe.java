@@ -19,7 +19,6 @@
 
 package net.sf.freecol.common.model;
 
-import static net.sf.freecol.common.util.CollectionUtils.concat;
 import static net.sf.freecol.common.util.CollectionUtils.count;
 import static net.sf.freecol.common.util.CollectionUtils.sort;
 

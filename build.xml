@@ -12,20 +12,20 @@
     <property name="java.target.version" value="11"/>
     <property name="freecol.name" value="freecol"/>
     <property environment="env"/>
-    <property name="freecol.data.dir" value="${basedir}/data"/>
-    <property name="freecol.rules.dir" value="${basedir}/data/rules"/>
-    <property name="freecol.src.dir" value="${basedir}/src"/>
-    <property name="freecol.build.dir" value="${basedir}/build"/>
-    <property name="freecol.packaging.dir" value="${basedir}/packaging"/>
+    <property name="freecol.data.dir" value="/data"/>
+    <property name="freecol.rules.dir" value="/data/rules"/>
+    <property name="freecol.src.dir" value="/"/>
+    <property name="freecol.build.dir" value="/build"/>
+    <property name="freecol.packaging.dir" value="/packaging"/>
     <property name="freecol.release.dir" value="${basedir}/dist"/>
-    <property name="freecol.doc.dir" value="${basedir}/doc"/>
+    <property name="freecol.doc.dir" value="/doc"/>
     <property name="freecol.javadoc.dir" value="${freecol.doc.dir}/javadoc"/>
     <property name="freecol.jar.file" value="${basedir}/FreeCol.jar"/>
     <property name="freecol.main.class" value="net.sf.freecol.FreeCol"/>
     <property name="freecol.metaserver.jar.file"
               value="${basedir}/FreeCol-metaserver.jar"/>
     <property name="freecol.overview.file"
-              value="${freecol.src.dir}/overview.html"/>
+              value="/overview.html"/>
     <property name="test" value="AllTests"/>
     <property name="miglayout-swing.jar"
               value="jars/miglayout-swing-5.0.jar"/>
@@ -37,20 +37,20 @@
 
     <path id="libraries.classpath">
         <!-- MigLayout manager -->
-        <pathelement location="${basedir}/${miglayout-swing.jar}"/>
-        <pathelement location="${basedir}/${miglayout-core.jar}"/>
+        <pathelement location="/jars/miglayout-swing-5.0.jar"/>
+        <pathelement location="/jars/miglayout-core-5.0.jar"/>
         <!-- Command line processor -->
-        <pathelement location="${basedir}/${cli.jar}"/>
+        <pathelement location="/jars/commons-cli-1.4.jar"/>
         <!-- Cortado Video Applet -->
-        <pathelement location="${basedir}/${cortado.jar}"/>
+        <pathelement location="/jars/cortado-0.6.0.jar"/>
         <!-- JOgg/JOrbis libraries -->
-        <pathelement location="${basedir}/jars/jogg-0.0.17.jar"/>
-        <pathelement location="${basedir}/jars/jorbis-0.0.17.jar"/>
+        <pathelement location="/jars/jogg-0.0.17.jar"/>
+        <pathelement location="/jars/jorbis-0.0.17.jar"/>
         <!-- findbugs annotations -->
-        <pathelement location="${basedir}/jars/findbugs-annotations.jar"/>
+        <pathelement location="/jars/findbugs-annotations.jar"/>
     </path>
     <path id="junit.classpath">
-        <pathelement location="${basedir}/test/lib/junit.jar" />
+        <pathelement location="/lib/junit.jar" />
     </path>
     <path id="freecol.build.classpath">
         <path refid="libraries.classpath" />
@@ -60,7 +60,7 @@
         <path refid="libraries.classpath" />
      </path>
     <path id="test.run.classpath">
-        <pathelement location="${freecol.build.dir}" />
+        <pathelement location="build" />
         <path refid="junit.classpath"/>
         <path refid="libraries.classpath" />
     </path>
@@ -89,7 +89,7 @@
     <target name="define-jsmoothgen">
         <taskdef name="jsmoothgen"
                  classname="net.charabia.jsmoothgen.ant.JSmoothGen"
-                 classpath="${freecol.build.dir}/jars/jsmoothgen-ant.jar"/>
+                 classpath="build/jars/jsmoothgen-ant.jar"/>
     </target>
 
     <target name="init" unless="TSTAMP">
@@ -98,9 +98,9 @@
 
     <!-- Compiles the java source files. -->
     <target name="compile" depends="init">
-        <mkdir dir="${freecol.build.dir}"/>
+        <mkdir dir="build"/>
         <javac srcdir="${freecol.src.dir}"
-               destdir="${freecol.build.dir}"
+               destdir="build"
                classpathref="freecol.build.classpath"
                debug="on"
                optimize="on"
@@ -116,9 +116,9 @@
 
     <!-- Compile the JUnit tests -->
     <target name="compile-test" depends="init">
-        <mkdir dir="${freecol.build.dir}"/>
+        <mkdir dir="build"/>
         <javac srcdir="test/src"
-               destdir="${freecol.build.dir}"
+               destdir="build"
                classpathref="test.build.classpath"
                debug="on"
                optimize="on"
@@ -134,8 +134,8 @@
 
     <target name="build" depends="init,compile"
             description="Compiles the source files.">
-        <copy todir="${freecol.build.dir}">
-            <fileset dir="${freecol.src.dir}" includes="**/*.xml" />
+        <copy todir="build">
+            <fileset dir="src" includes="**/*.xml" />
         </copy>
     </target>
 
@@ -183,7 +183,7 @@
     <!-- Compiles the source files and creates a JAR-file. -->
     <target name="package" depends="init,build,manifest" description="Compiles the source files and creates a JAR-file.">
         <jar jarfile="${freecol.jar.file}"
-             basedir="${freecol.build.dir}"
+             basedir="build"
              manifest="${basedir}/src/MANIFEST.MF"
              includes="net/**, splash.jpg"
              excludes="net/sf/freecol/metaserver/**"/>
@@ -211,7 +211,7 @@
     <target name="metaserver" depends="init,build,metamanifest"
             description="Compiles the metaserver and creates a JAR-file.">
         <jar jarfile="${freecol.metaserver.jar.file}"
-             basedir="${freecol.build.dir}"
+             basedir="build"
              manifest="${basedir}/src/METAMANIFEST.MF"
              includes="net/sf/freecol/metaserver/**,
                        net/sf/freecol/client/ClientOptions.class,
@@ -277,10 +277,10 @@
         <property name="freecol.release.name"
                   value="${freecol.name}-${freecol.version}"/>
         <echo message="Creating Distribution of ${freecol.release.name}"/>
-        <replaceregexp file="${freecol.src.dir}/net/sf/freecol/FreeCol.java"
+        <replaceregexp file="/net/sf/freecol/FreeCol.java"
                        match="FREECOL_VERSION\s*=\s*&quot;(.*?)&quot;\;"
                        replace="FREECOL_VERSION = &quot;${freecol.version}&quot;\;"/>
-        <replaceregexp file="${freecol.doc.dir}/version.sty"
+        <replaceregexp file="doc/version.sty"
                        match="fcversion\}\{(.*?)\}"
                        replace="fcversion\}\{${freecol.version}\}"/>
         <echo message="Game version updated in FreeCol.java" />
@@ -303,8 +303,8 @@
     <target name="prepareManual" depends="initDist,print-manuals">
         <mkdir dir="${freecol.release.dir}/manual/${freecol.name}"/>
         <copy todir="${freecol.release.dir}/manual/${freecol.name}">
-            <fileset dir="${freecol.doc.dir}" includes="FreeCol.pdf"/>
-            <fileset dir="${freecol.doc.dir}" includes="developer.pdf"/>
+            <fileset dir="doc" includes="FreeCol.pdf"/>
+            <fileset dir="doc" includes="developer.pdf"/>
         </copy>
     </target>
 
@@ -313,18 +313,18 @@
         <antcall target="package"/>
         <mkdir dir="${freecol.release.dir}/base/${freecol.name}"/>
         <copy todir="${freecol.release.dir}/base/${freecol.name}">
-            <fileset dir="${basedir}" includes="FreeCol.jar"/>
-            <fileset dir="${basedir}" includes="splash.jpg"/>
-            <fileset dir="${freecol.packaging.dir}/common" includes="COPYING"/>
-            <fileset dir="${freecol.packaging.dir}/common" includes="README"/>
-            <fileset dir="${freecol.packaging.dir}/common"
+            <fileset dir="/" includes="FreeCol.jar"/>
+            <fileset dir="/" includes="splash.jpg"/>
+            <fileset dir="packaging/common" includes="COPYING"/>
+            <fileset dir="packaging/common" includes="README"/>
+            <fileset dir="packaging/common"
                      includes="freecol.cmd"/>
-            <fileset dir="${freecol.packaging.dir}/common"
+            <fileset dir="packaging/common"
                      includes="freecol.xpm"/>
-            <fileset dir="${basedir}" includes="data/**"/>
-            <fileset dir="${basedir}" includes="jars/**"/>
+            <fileset dir="/" includes="data/**"/>
+            <fileset dir="/" includes="jars/**"/>
         </copy>
-        <copy file="${freecol.packaging.dir}/common/freecol.sh"
+        <copy file="packaging/common/freecol.sh"
               tofile="${freecol.release.dir}/base/${freecol.name}/freecol"/>
     </target>
 
@@ -332,22 +332,22 @@
         <antcall target="cleanMain"/>
         <mkdir dir="${freecol.release.dir}/source/${freecol.name}"/>
         <copy todir="${freecol.release.dir}/source/${freecol.name}">
-            <fileset dir="${basedir}"
+            <fileset dir="/"
                      excludes="splash.jpg,dist/**,data/**,jars/**,www.freecol.org/**,nbproject/**,srcdata/**,unused/**"/>
         </copy>
     </target>
 
     <target name="prepareWinFiles" depends="initDist,define-jsmoothgen">
-        <jsmoothgen project="${freecol.build.dir}/startup.jsmooth"
-                    skeletonroot="${freecol.build.dir}/skeletons"/>
+        <jsmoothgen project="build/startup.jsmooth"
+                    skeletonroot="build/skeletons"/>
         <move todir="${freecol.release.dir}/win/${freecol.name}">
-            <fileset dir="${freecol.build.dir}" includes="freecol.exe"/>
+            <fileset dir="build" includes="freecol.exe"/>
         </move>
         <mkdir dir="${freecol.release.dir}/win/${freecol.name}/Uninstaller"/>
-        <jsmoothgen project="${freecol.build.dir}/uninstaller.jsmooth"
-                    skeletonroot="${freecol.build.dir}/skeletons"/>
+        <jsmoothgen project="build/uninstaller.jsmooth"
+                    skeletonroot="build/skeletons"/>
         <move todir="${freecol.release.dir}/win/${freecol.name}/Uninstaller">
-            <fileset dir="${freecol.build.dir}" includes="uninstaller.exe"/>
+            <fileset dir="build" includes="uninstaller.exe"/>
         </move>
     </target>
 
@@ -491,7 +491,7 @@
             depends="initDist,prepareWinFiles,prepareManual,prepareBaseFiles,prepareSourceFiles,installer-translations">
         <taskdef name="izpack"
                  classname="com.izforge.izpack.ant.IzPackTask"
-                 classpath="${freecol.build.dir}/jars/standalone-compiler.jar"/>
+                 classpath="build/jars/standalone-compiler.jar"/>
         <antcall target="executeIzpack" />
     </target>
 
@@ -499,7 +499,7 @@
             description="Builds a windows installer"
             depends="initDist,javaInstallerBundle,define-jsmoothgen">
         <copy todir="${freecol.release.dir}">
-            <fileset dir="${freecol.build.dir}" includes="installer.jsmooth"/>
+            <fileset dir="build" includes="installer.jsmooth"/>
         </copy>
         <replace file="${freecol.release.dir}/installer.jsmooth"
                  token="%ant:freecol.release.name%"
@@ -508,14 +508,14 @@
                  token="%ant:freecol.installerjar%"
                  value="${freecol.release.dir}/${freecol.release.name}-installer.jar"/>
         <jsmoothgen project="${freecol.release.dir}/installer.jsmooth"
-                    skeletonroot="${freecol.build.dir}/skeletons"/>
+                    skeletonroot="build/skeletons"/>
     </target>
     
     <target name="win-complete-installer"
             description="Builds an installer for Windows with an included JVM."
             depends="initDist,prepareManual,prepareBaseFiles">
         
-        <exec executable="jpackage" dir="." >
+        <exec executable="jpackage" dir="" >
             <arg value="--input"/>
             <arg file="${freecol.release.dir}/base/freecol/"/>
             <arg value="--type"/>
@@ -549,7 +549,7 @@
             description="Builds an installer for macOs with an included JVM."
             depends="initDist,prepareManual,prepareBaseFiles">
         
-        <exec executable="jpackage" dir="." >
+        <exec executable="jpackage" dir="" >
             <arg value="--input"/>
             <arg file="${freecol.release.dir}/base/freecol/"/>
             <arg value="--name"/>
@@ -588,7 +588,7 @@
              -->
         <taskdef name="jarbundler"
                  classname="com.ultramixer.jarbundler.JarBundler"
-                 classpath="${freecol.build.dir}/jars/jarbundler-core-3.3.0.jar"/>
+                 classpath="build/jars/jarbundler-core-3.3.0.jar"/>
         <jarbundler dir="${freecol.release.dir}"
                     name="FreeCol"
                     mainclass="${freecol.main.class}"
@@ -596,9 +596,9 @@
                     vmoptions="-Xmx2G -Dapple.awt.fakefullscreen=true"
                     jvmversion="1.11"
                     arguments="--windowed --freecol-data FreeCol.app/Contents/Resources/"
-                    stubfile="${freecol.build.dir}/skeletons/universalJavaApplicationStub"
+                    stubfile="build/skeletons/universalJavaApplicationStub"
                     useJavaXKey="true"
-                    icon="${freecol.packaging.dir}/icons/FreeCol.icns">
+                    icon="packaging/icons/FreeCol.icns">
             <jarfileset dir="${freecol.release.dir}/base/freecol/">
                 <include name="**/*" />
                 <exclude name="data/**" />
@@ -643,12 +643,12 @@
     <target name="cleanBuild" depends="init"
             description="Cleans the directories by removing auto-generated files.">
         <delete quiet="true" includeEmptyDirs="true">
-            <fileset dir="${freecol.build.dir}" includes="net/**" />
-            <fileset dir="${freecol.build.dir}" includes="timestamp.inf" />
-            <fileset dir="${freecol.build.dir}" includes="report/**" />
-            <fileset dir="${freecol.build.dir}" includes="TEST-net.sf.freecol.*" />
-            <fileset dir="${freecol.build.dir}" includes="dependencies.txt" />
-            <fileset dir="${freecol.doc.dir}"
+            <fileset dir="build" includes="net/**" />
+            <fileset dir="build" includes="timestamp.inf" />
+            <fileset dir="build" includes="report/**" />
+            <fileset dir="build" includes="TEST-net.sf.freecol.*" />
+            <fileset dir="build" includes="dependencies.txt" />
+            <fileset dir="doc"
                      excludes="*.tex *.sty images/* specification.*" />
         </delete>
     </target>
@@ -676,7 +676,7 @@
     </target>
 
     <target name="fix" depends="init">
-        <fixcrlf srcdir="${freecol.src.dir}"
+        <fixcrlf srcdir="src"
                  includes="**/*.java"
                  eol="asis"
                  tab="remove"
@@ -690,7 +690,7 @@
             description="Generate JavaDoc documentation.">
         <mkdir dir="${freecol.javadoc.dir}"/>
         <javadoc sourcepath="${freecol.src.dir}"
-                 overview="${freecol.overview.file}"
+                 overview="src/overview.html"
                  destdir="${freecol.javadoc.dir}"
                  packagenames="net.sf.freecol.*"
                  private="true"
@@ -729,7 +729,7 @@
             <classpath refid="test.run.classpath"/>
             <formatter type="brief" usefile="false" />
             <formatter type="plain" />
-            <test todir="${freecol.build.dir}" name="net.sf.freecol.${test}" />
+            <test todir="build" name="net.sf.freecol.${test}" />
             <sysproperty key="java.awt.headless" value="true" />
         </junit>
         <echo message="For more detailed information about this test run see:"/>
@@ -806,9 +806,9 @@
 
     <target name="build-unit-tests" depends="build">
         <depend srcDir="test/src" destDir="${freecol.build.dir}"
-                cache="${freecol.build.dir}" />
+                cache="build" />
         <javac srcdir="test/src"
-               destdir="${freecol.build.dir}"
+               destdir="build"
                classpathref="test.build.classpath"
                debug="on"
                optimize="on"
@@ -824,15 +824,15 @@
     <target name="validate" description="Validates the specification.">
         <echo message="Validating freecol/specification.xml."/>
         <schemavalidate noNamespaceFile="schema/specification-schema.xsd"
-                        file="${freecol.rules.dir}/freecol/specification.xml">
+                        file="data/rules/freecol/specification.xml">
         </schemavalidate>
         <echo message="Validating classic/specification.xml."/>
         <schemavalidate noNamespaceFile="schema/specification-schema.xsd"
-                        file="${freecol.rules.dir}/classic/specification.xml">
+                        file="data/rules/classic/specification.xml">
         </schemavalidate>
         <echo message="Validating testing/specification.xml."/>
         <schemavalidate noNamespaceFile="schema/specification-schema.xsd"
-                        file="${freecol.rules.dir}/testing/specification.xml">
+                        file="data/rules/testing/specification.xml">
         </schemavalidate>
     </target>
 
@@ -923,12 +923,12 @@
     </target>
 
     <target name="fixTabsWindows">
-        <fixcrlf srcdir="${freecol.src.dir}" tab="remove" tablength="4"
+        <fixcrlf srcdir="src" tab="remove" tablength="4"
                  includes="**/*.java" eol="crlf"/>
     </target>
 
     <target name="fixTabsUnix">
-        <fixcrlf srcdir="${freecol.src.dir}" tab="remove" tablength="4"
+        <fixcrlf srcdir="src" tab="remove" tablength="4"
                  includes="**/*.java" eol="lf"/>
     </target>
 

@@ -24,7 +24,6 @@ import static net.sf.freecol.common.util.CollectionUtils.all;
 import static net.sf.freecol.common.util.CollectionUtils.any;
 import static net.sf.freecol.common.util.CollectionUtils.cacheInt;
 import static net.sf.freecol.common.util.CollectionUtils.cachingDoubleComparator;
-import static net.sf.freecol.common.util.CollectionUtils.concat;
 import static net.sf.freecol.common.util.CollectionUtils.count;
 import static net.sf.freecol.common.util.CollectionUtils.find;
 import static net.sf.freecol.common.util.CollectionUtils.flatten;

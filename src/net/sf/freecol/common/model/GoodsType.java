@@ -31,7 +31,6 @@ import javax.xml.stream.XMLStreamException;
 import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 import static net.sf.freecol.common.model.Constants.*;
-import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
 /**

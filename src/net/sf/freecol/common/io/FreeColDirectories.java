@@ -42,7 +42,6 @@ import net.sf.freecol.common.debug.FreeColDebugger;
 import net.sf.freecol.common.model.StringTemplate;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.OSUtils.*;
-import static net.sf.freecol.common.util.StringUtils.*;
 import static net.sf.freecol.common.util.Utils.*;
 
 

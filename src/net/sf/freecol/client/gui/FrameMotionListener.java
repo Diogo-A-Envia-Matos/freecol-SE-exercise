@@ -26,8 +26,6 @@ import java.awt.event.MouseEvent;
 import javax.swing.JInternalFrame;
 import javax.swing.SwingUtilities;
 
-import net.sf.freecol.client.gui.SwingGUI.PopupPosition;
-
 
 /**
  * The mouse adapter to handle frame movement.

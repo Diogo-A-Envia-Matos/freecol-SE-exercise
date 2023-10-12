@@ -28,7 +28,6 @@ import javax.xml.stream.XMLStreamException;
 import net.sf.freecol.common.io.FreeColXMLReader;
 import static net.sf.freecol.common.model.Constants.*;
 import net.sf.freecol.common.util.LogBuilder;
-import static net.sf.freecol.common.util.CollectionUtils.*;
 import net.sf.freecol.common.util.Utils;
 
 

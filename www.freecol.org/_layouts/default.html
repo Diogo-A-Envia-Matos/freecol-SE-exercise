@@ -53,7 +53,7 @@
                     <div>
                         <div>
                             <h3>Main Menu</h3>
-                                <div class="mainmenu"><a href="/" class="mainlevel"{% if page.folder==nil %} id="active_menu"{% endif %}>Home</a></div>
+                                <div class="mainmenu"><a href="/" class="mainlevel" {% if page.folder==nil %} id="active_menu" {% endif %}>Home</a></div>
                                 <div class="mainmenu"><a href="/news/" class="mainlevel"{% if page.folder and page.folder.name=="News" %} id="active_menu"{% endif %}>News</a></div>
                                 <div class="mainmenu"><a href="/about.html" class="mainlevel"{% if page.folder and page.folder.name=="About FreeCol" and page.title!="Current Status" and page.title!="A History of FreeCol's Development" and page.title!="Roadmap" and page.title!="Team and Credits" and page.title!="How to Contribute" and page.title!="Contact Information" %} id="active_menu"{% endif %}>About FreeCol</a></div>
 {% if page.folder and page.folder.name=="About FreeCol" %}

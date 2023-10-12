@@ -42,8 +42,6 @@ import net.sf.freecol.common.io.FreeColDirectories;
 import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 
-import static net.sf.freecol.common.util.CollectionUtils.*;
-
 
 /**
  * A FreeCol high score record.

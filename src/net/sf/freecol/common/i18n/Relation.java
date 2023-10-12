@@ -168,7 +168,7 @@ public class Relation {
         } else {
             if (negated) sb.append("not ");
             if (!integer) sb.append("with");
-            sb.append("in ").append(low).append("..").append(high);
+            sb.append("in ").append(low).append("").append(high);
         }
         return sb.toString();
     }

@@ -20,7 +20,7 @@
 package net.sf.freecol.common.model;
 
 import net.sf.freecol.common.i18n.Messages;
-import static net.sf.freecol.common.util.CollectionUtils.*;
+
 import static net.sf.freecol.common.util.StringUtils.*;
 
 

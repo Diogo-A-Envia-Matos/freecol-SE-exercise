@@ -34,7 +34,6 @@ import javax.xml.stream.XMLStreamException;
 
 import net.sf.freecol.common.io.FreeColModFile;
 import net.sf.freecol.common.io.FreeColRules;
-import net.sf.freecol.common.io.FreeColTcFile;
 import net.sf.freecol.common.model.Modifier.ModifierType;
 import net.sf.freecol.util.test.FreeColTestCase;
 
